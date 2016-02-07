@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html ng-app="bitblot">
+<head>
+    <title>BitBlot!!</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="BitBlotCtrl">
+<!-- div for login view -->
+<div class="login" ng-show="true">
+    <form ng-submit="submit()">
+        <p>Login or Register!</p>
+        <label for="username">Welcome, </label>
+        <input type="text" id="username" placeholder="name" ng-model="form.username">
+        <input type="submit" value="Submit"> !
+    </form>
+</div>
+<main ng-show="true">
+    <p><button ng-click="prev()" ng-disabled="currentImageNum === 0">Previous</button></p>
+    <p><img ng-src="{{currentImage.src}}"></p>
+    <p><button ng-click="next()" ng-disabled="currentImageNum >= images.length - 1">Next</button></p>
+    <label>
+        Amount that you "Liked" the image. <br/>
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="1">1
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="2">2
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="3">3
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="4">4
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="5">5
+    </label><br/>
+    <label>
+        Level of "Happiness" that the image produced. <br />
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="1">1
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="2">2
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="3">3
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="4">4
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="5">5
+    </label><br/>
+    <label>
+        Level of "Sadness" that the image produced. <br />
+        <input type="radio" name="sadness" ng-model="currentImage.sadnessAmount" value="1">
+        <input type="radio" name="sadness" ng-model="currentImage.sadnessAmount" value="2">
+        <input type="radio" name="sadness" ng-model="currentImage.sadnessAmount" value="3">
+        <input type="radio" name="sadness" ng-model="currentImage.sadnessAmount" value="4">
+        <input type="radio" name="sadness" ng-model="currentImage.sadnessAmount" value="5">
+    </label><br/>
+    <label>
+        Level of "Disgust" that the image produced. <br />
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="1">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="2">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="3">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="4">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="5">
+    </label><br/>
+    <label>
+        Level of "Anxiety" that the image produced. <br />
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value=" 1 ">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="2">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="3">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="4">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="5">
+    </label><br/>
+    <label>
+        Level of "Calm" that the image produced. <br />
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="1">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="2">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="3">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="4">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="5">
+    </label><br/>
+    <label for="anger">
+        Level of "Anger" that the image produced. <br />
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="1">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="2">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="3">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="4">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="5">
+    </label><br/>
+    <label>
+        Level of "Curiosity" that the image produced. <br />
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="1">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="2">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="3">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="4">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="5">
+    </label><br/>
+
+<button ng-click="prev()" ng-disabled="currentImageNum === 0">Previous Image</button>
+<button ng-click="submit()" type="submit">Submit Responses!</button>
+<button ng-click="next()" ng-disabled="currentImageNum >= images.length - 1">Next Image</button>
+
+</main>
+<section>
+    <h2>Results!</h2>
+    <div class="results1">
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+        <tr><h4>Your Results</h4></tr>
+        <tr>
+            <th>Image ID</th>
+            <th>Liked</th>
+            <th>Happiness</th>
+            <th>Sadness</th>
+            <th>Disgust</th>
+            <th>Anxiety</th>
+            <th>Calm</th>
+            <th>Anger</th>
+            <th>Curiosity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rowCollection">
+            <td>{{row.id}}</td>
+            <td>{{row.liked}}</td>
+            <td>{{row.happiness}}</td>
+            <td>{{row.sadness}}</td>
+            <td>{{row.disgust}}</td>
+            <td>{{row.anxiety}}</td>
+            <td>{{row.calm}}</td>
+            <td>{{row.anger}}</td>
+            <td>{{row.curiosity}}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="results2"></div>
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+        <tr><h4>Average User Results</h4></tr>
+        <tr>
+            <th>Image ID</th>
+            <th>Liked</th>
+            <th>Happiness</th>
+            <th>Sadness</th>
+            <th>Disgust</th>
+            <th>Anxiety</th>
+            <th>Calm</th>
+            <th>Anger</th>
+            <th>Curiosity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rowCollection">
+            <td>{{row.avgId}}</td>
+            <td>{{row.avgLiked}}</td>
+            <td>{{row.avgHappiness}}</td>
+            <td>{{row.avgSadness}}</td>
+            <td>{{row.avgDisgust}}</td>
+            <td>{{row.avgAnxiety}}</td>
+            <td>{{row.avgCalm}}</td>
+            <td>{{row.avgAnger}}</td>
+            <td>{{row.avgCuriosity}}</td>
+        </tr>
+        </tbody>
+        </table st-table="rowCollection" class="table table-striped">
+        </div>
+</section>
+<!--div for results page -->
+
+<script src="/vendors/angular/angular.min.js" type="text/javascript"></script>
+<script src="/assets/scripts/app.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>-->
+
+</body>
+</html>

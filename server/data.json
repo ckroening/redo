@@ -1,0 +1,122 @@
+[
+  {
+    "name": "abstract",
+    "src": "/assets/images/abstract.jpg"
+  },
+  {
+    "name": "bwperson",
+    "src":"/assets/images/bwperson.jpg"
+  },
+  {
+    "name": "cat",
+    "src": "/assets/images/cat.jpg"
+  },
+  {
+    "name": "city",
+    "src": "/assets/images/city.jpg"
+  },
+  {
+    "name": "coffee",
+    "src":"/assets/images/coffee.jpg"
+  },
+  {
+    "name": "computer",
+    "src": "/assets/images/computer.jpg"
+  },
+  {
+    "name": "curvesabstract",
+    "src":"/assets/images/curvesabstract.jpg"
+  },
+  {
+    "name": "doodle",
+    "src": "/assets/images/doodle.jpg"
+  },
+  {
+    "name": "garden",
+    "src":"/assets/images/garden.jpg"
+  },
+  {
+    "name": "greymountains",
+    "src": "/assets/images/greymountains.jpg"
+  },
+  {
+    "name": "guitar",
+    "src":"/assets/images/guitar.jpg"
+  },
+  {
+    "name": "handheart",
+    "src": "/assets/images/handheart.jpg"
+  },
+  {
+    "name": "handtree",
+    "src":"/assets/images/handtree.jpg"
+  },
+  {
+    "name": "hay",
+    "src": "/assets/images/hay.jpg"
+  },
+  {
+    "name": "heart",
+    "src":"/assets/images/heart.jpg"
+  },
+  {
+    "name": "kid",
+    "src": "/assets/images/kid.jpg"
+  },
+  {
+    "name": "library",
+    "src":"/assets/images/library.jpg"
+  },
+  {
+    "name": "nature",
+    "src": "/assets/images/nature.jpg"
+  },
+  {
+    "name": "park",
+    "src":"/assets/images/park.jpg"
+  },
+  {
+    "name": "person",
+    "src":"/assets/images/person.jpg"
+  },
+  {
+    "name": "piano",
+    "src": "/assets/images/piano.jpg"
+  },
+  {
+    "name": "puppy",
+    "src":"/assets/images/puppy.jpg"
+  },
+  {
+    "name": "redabstract",
+    "src": "/assets/images/redabstract.jpg"
+  },
+  {
+    "name": "smokemagic",
+    "src":"/assets/images/smokemagic.jpg"
+  },
+  {
+    "name": "staircase",
+    "src":"/assets/images/staircase.jpg"
+  },
+  {
+    "name": "stairs",
+    "src": "/assets/images/stairs.jpg"
+  },
+  {
+    "name": "success",
+    "src":"/assets/images/sunset.jpg"
+  },
+  {
+    "name": "tv",
+    "src": "/assets/images/tv.jpg"
+  },
+  {
+    "name": "walkway",
+    "src":"/assets/images/walkway.jpg"
+  },
+  {
+    "name": "yellowstairs",
+    "src":"/assets/images/yellowstairs.jpg"
+  }
+]
